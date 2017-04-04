@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import AppHeader from '../components/AppHeader';
+import AppHeader from '../components/header/AppHeader';
 import Content from './Content';
 import * as Actions from '../actions/index';
 

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {Button} from 'react-bootstrap';
+import VehicleTable from '../components/vehicle-table/VehicleTable';
 
 class Content extends Component {
   render() {
     return (
-      <Button bsStyle="primary">Primary</Button>
+      <VehicleTable/>
     );
   }
 }

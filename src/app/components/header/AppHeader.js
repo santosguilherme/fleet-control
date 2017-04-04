@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './AppHeader.scss';
+
 const AppHeader = () => {
   return (
-    <header>
-      Conta Azul Header
+    <header className="app-header">
+      Company name
     </header>
   );
 };
