@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 import {Pagination} from 'react-bootstrap';
 
+import './pagination.scss';
+
 class PaginationTable extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       activePage: 1
     };
+
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   handleSelect(eventKey) {
@@ -18,15 +22,11 @@ class PaginationTable extends Component {
 
   render() {
     return (
-      <div>
+      <div className="vehicles-table-pagination">
         <Pagination
-          prev
-          next
           first
           last
-          ellipsis
-          boundaryLinks
-          items={20}
+          items={5}
           maxButtons={5}
           activePage={this.state.activePage}
           onSelect={this.handleSelect}
