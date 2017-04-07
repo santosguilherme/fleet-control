@@ -18,9 +18,11 @@ class PaginationTable extends Component {
     this.setState({
       activePage: eventKey
     });
+    // todo - receber uma ação pagar filtrar a lista
   }
 
   render() {
+    // todo - receber o numero de itens
     return (
       <div className="vehicles-table-pagination">
         <Pagination
