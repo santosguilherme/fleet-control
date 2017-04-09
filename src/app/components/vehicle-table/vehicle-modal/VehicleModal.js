@@ -61,7 +61,7 @@ class VehicleModal extends Component {
   }
 
   disableSaveButton() {
-    return this.handleValidationState('placa') || this.handleValidationState('marca') || this.handleValidationState('modelo');
+    return Boolean(this.handleValidationState('placa') || this.handleValidationState('marca') || this.handleValidationState('modelo'));
   }
 
   render() {

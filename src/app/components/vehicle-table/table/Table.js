@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 
 import './table.scss';
 
@@ -11,34 +11,70 @@ function getVehiclePhotoLink(imageUrl) {
   );
 }
 
-function Table({vehicles}) {
-  return (
-    <table className="table vehicle-table">
-      <thead>
-        <tr>
-          <th>Placa</th>
-          <th>Modelo</th>
-          <th>Marca</th>
-          <th>Foto</th>
-          <th>Combustível</th>
-          <th>Valor</th>
-        </tr>
-      </thead>
+class Table extends Component {
+  constructor(props) {
+    super(props);
 
-      <tbody>
-        {vehicles.map((vehicle, index) =>
-          <tr key={index}>
-            <td>{vehicle.placa}</td>
-            <td>{vehicle.modelo}</td>
-            <td>{vehicle.marca}</td>
-            <td>{getVehiclePhotoLink(vehicle.imagem)}</td>
-            <td>{vehicle.combustivel}</td>
-            <td>{vehicle.valor}</td>
+    this.state = {
+      allSelected: false
+    };
+
+    this.handleSelectAll = this.handleSelectAll.bind(this);
+  }
+
+  handleSelectAll(event) {
+    const checkboxValue = event.target.checked;
+    this.setState({
+      allSelected: checkboxValue
+    });
+    console.log('this.state.allSelected', this.state.allSelected);
+
+    (this.props.vehicles || []).forEach(vehicle => {
+      vehicle.selected = checkboxValue;
+    });
+  }
+
+  render() {
+    const {vehicles} = this.props;
+
+    return (
+      <table className="table vehicle-table">
+        <thead>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                selected={this.state.allSelected}
+                onChange={this.handleSelectAll}
+                />
+            </th>
+            <th>Placa</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Foto</th>
+            <th>Combustível</th>
+            <th>Valor</th>
           </tr>
-        )}
-      </tbody>
-    </table>
-  );
+        </thead>
+
+        <tbody>
+          {vehicles.map((vehicle, index) =>
+            <tr key={index}>
+              <td>
+                {vehicle.selected}
+              </td>
+              <td>{vehicle.placa}</td>
+              <td>{vehicle.modelo}</td>
+              <td>{vehicle.marca}</td>
+              <td>{getVehiclePhotoLink(vehicle.imagem)}</td>
+              <td>{vehicle.combustivel}</td>
+              <td>{vehicle.valor}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    );
+  }
 }
 
 Table.propTypes = {
