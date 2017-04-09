@@ -75,7 +75,7 @@ class VehicleModal extends Component {
           <form>
             <Row>
               <Col xs={12} sm={4} md={3} className={'form-group ' + this.handleValidationState('placa')}>
-                <label>* Placa</label>
+                <label className="control-label">* Placa</label>
 
                 <MaskedTextInput
                   mask={[/[A-Za-z]/, /[A-Za-z]/, /[A-Za-z]/, '-', /[1-9]/, /[1-9]/, /[1-9]/, /[1-9]/]}
