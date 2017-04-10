@@ -3,7 +3,7 @@
           class="close"
           data-dismiss="modal"
           aria-label="Close"
-          ng-click="$ctrl.cancel()">
+          ng-click="$ctrl.handleCancel()">
 
     <span aria-hidden="true">&times;</span>
   </button>
@@ -121,13 +121,13 @@
 
 <div class="modal-footer">
   <button class="btn btn-default"
-          ng-click="$ctrl.cancel()"
+          ng-click="$ctrl.handleCancel()"
           ng-bind="::'LABELS.CANCEL' | translate">
   </button>
 
   <button type="submit"
           class="btn btn-primary"
-          ng-click="$ctrl.confirm()"
+          ng-click="$ctrl.handleClose()"
           ng-disabled="!form.$valid"
           ng-bind="::'LABELS.SAVE' | translate">
   </button>

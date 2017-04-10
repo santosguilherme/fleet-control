@@ -19,7 +19,7 @@
       vm.modalInstance.close(vm.vehicle);
     };
 
-    vm.cancel = function () {
+    vm.handleCancel = function () {
       vm.modalInstance.dismiss();
     };
   }
