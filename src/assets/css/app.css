@@ -121,6 +121,15 @@ label {
   bottom: 0;
   color: #d9534f; }
 
+.label-required {
+  position: relative; }
+  .label-required:after {
+    position: absolute;
+    content: "\2217";
+    color: #FF5757;
+    margin-left: 1px;
+    margin-top: -5px; }
+
 .app-header {
   height: 50px;
   background: #2687E9; }

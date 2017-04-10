@@ -23,3 +23,15 @@
     color: $brand-danger;
   }
 }
+
+.label-required {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "\2217";
+    color: #FF5757;
+    margin-left: 1px;
+    margin-top: -5px;
+  }
+}

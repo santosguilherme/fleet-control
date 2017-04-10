@@ -14,7 +14,7 @@
           component: 'fleetControlModal',
           resolve: {
             vehicle: function () {
-              return vehicle;
+              return vehicle || {};
             }
           }
         };

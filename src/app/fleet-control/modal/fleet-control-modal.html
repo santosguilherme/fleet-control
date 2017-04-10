@@ -16,26 +16,119 @@
 <div class="modal-body">
   <form role="form" name="form">
     <div class="row">
-      <div class="form-group col-xs-12" ng-class="{'has-error': form.user.$dirty && form.user.$error.required}">
-        <label ng-bind="::'PERSON' | translate"></label>
+      <div class="form-group col-xs-12 col-sm-4 col-md-3"
+           ng-class="{'has-error': form.carPlate.$dirty && form.carPlate.$error.required}">
 
+        <label class="control-label label-required"
+               for="carPlate"
+               ng-bind="::'LABELS.PLATE' | translate"></label>
+
+        <input id="carPlate"
+               name="carPlate"
+               type="text"
+               class="form-control"
+               ng-model="$ctrl.vehicle.placa"
+               ui-mask="AAA-9999" ui-mask-placeholder ui-mask-placeholder-char="_"
+               required/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-12 col-sm-6 col-md-6"
+           ng-class="{'has-error': form.carBrand.$dirty && form.carBrand.$error.required}">
+
+        <label class="control-label label-required"
+               for="carBrand"
+               ng-bind="::'LABELS.BRAND' | translate"></label>
+
+        <input id="carBrand"
+               name="carBrand"
+               type="text"
+               class="form-control"
+               ng-model="$ctrl.vehicle.marca"
+               required/>
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-md-6"
+           ng-class="{'has-error': form.carModel.$dirty && form.carModel.$error.required}">
+
+        <label class="control-label label-required"
+               for="carModel"
+               ng-bind="::'LABELS.MODEL' | translate"></label>
+
+        <input id="carModel"
+               name="carModel"
+               type="text"
+               class="form-control"
+               ng-model="$ctrl.vehicle.modelo"
+               required/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-12 col-sm-6 col-md-6"
+           ng-class="{'has-error': form.carFuel.$dirty && form.carFuel.$error.required}">
+
+        <label class="control-label"
+               for="carFuel"
+               ng-bind="::'LABELS.FUEL' | translate">
+        </label>
+
+        <select id="carFuel"
+                name="carFuel"
+                class="form-control"
+                ng-model="$ctrl.vehicle.combustivel"
+                ng-options="fuel as fuel for fuel in $ctrl.fuels">
+          <option value="">{{::'LABELS.SELECT_FUEL' | translate}}</option>
+        </select>
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-md-6"
+           ng-class="{'has-error': form.carPrice.$dirty && form.carPrice.$error.required}">
+
+        <label class="control-label"
+               for="carPrice"
+               ng-bind="::'LABELS.PRICE' | translate">
+        </label>
+
+        <input id="carPrice"
+               name="carPrice"
+               type="text"
+               class="form-control"
+               ng-model="$ctrl.vehicle.valor"
+               ui-money-mask/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-12"
+           ng-class="{'has-error': form.carImage.$dirty && form.carImage.$error.required}">
+
+        <label class="control-label"
+               for="carImage"
+               ng-bind="::'LABELS.IMAGE' | translate">
+        </label>
+
+        <input id="carImage"
+               name="carImage"
+               type="text"
+               class="form-control"
+               ng-model="$ctrl.vehicle.imagem"/>
       </div>
     </div>
   </form>
-
 </div>
 
 <div class="modal-footer">
   <button class="btn btn-default"
           ng-click="$ctrl.cancel()"
-          ng-bind="::'CANCEL' | translate">
+          ng-bind="::'LABELS.CANCEL' | translate">
   </button>
 
   <button type="submit"
           class="btn btn-primary"
           ng-click="$ctrl.confirm()"
           ng-disabled="!form.$valid"
-          ng-bind="::'SAVE' | translate">
+          ng-bind="::'LABELS.SAVE' | translate">
   </button>
-</div>
 </div>

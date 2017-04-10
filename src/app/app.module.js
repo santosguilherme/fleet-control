@@ -9,7 +9,9 @@
     'ui.bootstrap',
     'angular-growl',
     'blockUI',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ui.mask',
+    'ui.utils.masks'
   ]);
 })();
 
