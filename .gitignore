@@ -1,5 +1,8 @@
-.tmp/
-coverage/
-node_modules/
+src/assets/libs
+node_modules
+dist
+.tmp
+npm-debug.log
 .idea/
-
+/.project
+/.tern-project

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+// Global
+@import "util/utils";
+
+// Módulos
+@import "components/spinkit",
+        "components/form-validation",
+        "components/header",
+        "components/content",
+        "components/fleet-control-actions",
+        "components/fleet-control-table",
+        "components/fleet-control-pagination";

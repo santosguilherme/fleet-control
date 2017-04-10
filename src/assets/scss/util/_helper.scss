@@ -1,0 +1,43 @@
+.bg-color-theme {
+  background-color: $colorTheme;
+}
+
+.font-color-theme {
+  color: $colorTheme;
+}
+
+.sp-relative {
+  position: relative;
+}
+
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.rotate90 {
+  transform: rotate(90deg);
+}
+
+.rotate90i {
+  transform: rotate(-90deg);
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.rotate270 {
+  transform: rotate(270deg);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-crosshair {
+  cursor: crosshair;
+}
+
+.overflow-x-auto {
+  overflow-x: auto
+}

@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/*
+ *  Mixin para as funções que terão propriedades no fullscreen
+ *
+ *  $className - Nome da classe que estará no elemento que ficará em fullscreen e receberá o pseudo-seletor
+ *
+ *  $declarations - Map (key: value) com as propriedades que deverão estar no fullscreen
+ */
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px; }
+
+a {
+  color: #014588;
+  text-decoration: none; }
+  a:hover, a:focus {
+    color: #013467;
+    text-decoration: underline; }
+  a:focus {
+    outline: none; }
+
+label {
+  font-weight: 600;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.54);
+  margin-bottom: 2px; }
+
+.bg-color-theme {
+  background-color: #014588; }
+
+.font-color-theme {
+  color: #014588; }
+
+.sp-relative {
+  position: relative; }
+
+.font-weight-normal {
+  font-weight: normal; }
+
+.rotate90 {
+  transform: rotate(90deg); }
+
+.rotate90i {
+  transform: rotate(-90deg); }
+
+.rotate180 {
+  transform: rotate(180deg); }
+
+.rotate270 {
+  transform: rotate(270deg); }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.cursor-crosshair {
+  cursor: crosshair; }
+
+.overflow-x-auto {
+  overflow-x: auto; }
+
+/*
+ *  http://tobiasahlin.com/spinkit/
+ */
+.solar-bpm-spinkit {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center; }
+  .solar-bpm-spinkit > div {
+    width: 18px;
+    height: 18px;
+    background-color: #014588;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
+  .solar-bpm-spinkit .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s; }
+  .solar-bpm-spinkit .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s; }
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1); } }
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+.has-error .form-control {
+  border-color: #ff5757;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+
+.has-error:after {
+  content: "Campo obrigatório";
+  margin-right: 5px;
+  font-size: 13px;
+  color: #d9534f;
+  padding-left: 18px; }
+
+.has-error:before {
+  content: "\f071";
+  font-family: Fontawesome;
+  margin-right: 5px;
+  font-size: 13px;
+  position: absolute;
+  bottom: 0;
+  color: #d9534f; }
+
+.app-header {
+  height: 50px;
+  background: #2687E9; }
+
+body {
+  background-color: #F1F4F9; }
+
+.vehicle-table-actions {
+  margin: 20px 0; }
+  .vehicle-table-actions .btn-primary {
+    background-color: #4ABA58;
+    border-color: #4ABA58;
+    padding: 8px 25px;
+    float: left; }
+    .vehicle-table-actions .btn-primary:hover, .vehicle-table-actions .btn-primary:focus, .vehicle-table-actions .btn-primary.focus, .vehicle-table-actions .btn-primary:active:hover, .vehicle-table-actions .btn-primary.active:hover, .vehicle-table-actions .btn-primary:active:focus, .vehicle-table-actions .btn-primary.active:focus, .vehicle-table-actions .btn-primary:active.focus, .vehicle-table-actions .btn-primary.active.focus {
+      background-color: #3a9745;
+      border-color: #33853d; }
+  .vehicle-table-actions .form-group {
+    margin-bottom: 0;
+    max-width: 250px;
+    float: right; }
+    .vehicle-table-actions .form-group .input-group > input.form-control {
+      height: 38px; }
+
+.vehicle-table.table {
+  color: #3C5D7D;
+  border: 1px solid #C9D3DD;
+  margin-bottom: 15px; }
+  .vehicle-table.table thead > tr > th {
+    background-color: #F8FAFC;
+    border-bottom: 0; }
+  .vehicle-table.table tbody > tr > td {
+    background-color: #FFFFFF;
+    padding: 15px 8px; }
+    .vehicle-table.table tbody > tr > td .btn-link {
+      cursor: pointer; }
+  .vehicle-table.table tr th, .vehicle-table.table tr td {
+    border-color: #C9D3DD; }
+
+.vehicles-table-pagination {
+  text-align: center; }
+  .vehicles-table-pagination ul.pagination li:first-child > a, .vehicles-table-pagination ul.pagination li:last-child > a {
+    font-weight: bold; }
+  .vehicles-table-pagination ul.pagination li a:hover, .vehicles-table-pagination ul.pagination li a:focus {
+    background-color: #FFFAEB; }
+  .vehicles-table-pagination ul.pagination .active a, .vehicles-table-pagination ul.pagination .active a:hover, .vehicles-table-pagination ul.pagination .active a:focus {
+    background-color: #D8E9FB;
+    border-color: #8BC8F6;
+    color: #395B7B; }

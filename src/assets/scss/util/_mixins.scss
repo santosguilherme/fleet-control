@@ -1,0 +1,78 @@
+/*
+ *  Mixin para as funções que terão propriedades no fullscreen
+ *
+ *  $className - Nome da classe que estará no elemento que ficará em fullscreen e receberá o pseudo-seletor
+ *
+ *  $declarations - Map (key: value) com as propriedades que deverão estar no fullscreen
+ */
+@mixin fullscreen($className, $declarations) {
+  .#{$className} {
+    &:-webkit-full-screen {
+      @each $property, $value in $declarations {
+        #{$property}: $value
+      }
+    }
+    &:-moz-full-screen {
+      @each $property, $value in $declarations {
+        #{$property}: $value
+      }
+    }
+    &:-ms-fullscreen {
+      @each $property, $value in $declarations {
+        #{$property}: $value
+      }
+    }
+  }
+}
+
+@mixin user-select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin button-colors($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+  text-decoration: none;
+}
+
+@mixin button-primary-disabled {
+  &:hover, &:focus, &.focus {
+    background-color: darken($bg-color-primary, 8%);
+    border-color: darken($bg-color-primary, 8%);
+  }
+}
+
+@mixin input-search {
+  position: relative;
+
+  input {
+    padding-left: 32px;
+  }
+
+  .input-group-addon {
+    background: none;
+    border: none;
+    position: absolute;
+    left: 0;
+    z-index: 11;
+    top: 4px;
+
+    i {
+      font-size: $font-size-default;
+      color: $gray-light-middle-x;
+    }
+  }
+}
+
+@mixin filter-search {
+
+  .filter-search {
+    width: 100%;
+
+    @include input-search;
+  }
+}

@@ -1,0 +1,43 @@
+<table class="table vehicle-table">
+  <thead>
+  <tr>
+    <th>
+      <!-- TODO -->
+      <input type="checkbox" class="cursor-pointer"/>
+    </th>
+    <!-- TODO translate -->
+    <th>Placa</th>
+    <th>Modelo</th>
+    <th>Marca</th>
+    <th>Foto</th>
+    <th>Combustível</th>
+    <th>Valor</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr ng-repeat="vehicle in $ctrl.vehicles">
+    <td>
+      <!-- TODO -->
+      <input type="checkbox" class="cursor-pointer">
+    </td>
+    <!-- TODO - tirar hífem da placa -->
+    <td ng-bind="vehicle.placa"></td>
+    <td ng-bind="vehicle.modelo"></td>
+    <td ng-bind="vehicle.marca"></td>
+    <td>
+      <a class="btn-link"
+         ng-if="vehicle.imagem"
+         ng-bind="::'LABELS.IMAGE' | translate"
+         ng-click="$ctrl.openNewTab(vehicle.imagem)">
+      </a>
+
+      <span ng-if="!vehicle.imagem"
+            ng-bind="::'LABELS.NO_IMAGE' | translate">
+      </span>
+    </td>
+    <td ng-bind="vehicle.combustivel"></td>
+    <td ng-bind="vehicle.valor | currency:''"></td>
+  </tr>
+  </tbody>
+</table>

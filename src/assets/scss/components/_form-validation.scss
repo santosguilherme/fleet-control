@@ -1,0 +1,25 @@
+.has-error {
+  .form-control {
+    border-color: $error-color;
+    -webkit-box-shadow: inset 0 1px 1px rgba($black, .075);
+    box-shadow: inset 0 1px 1px rgba($black, .075);
+  }
+
+  &:after {
+    content: "Campo obrigatório";
+    margin-right: 5px;
+    font-size: $font-small-xx;
+    color: $brand-danger;
+    padding-left: 18px;
+  }
+
+  &:before {
+    content: "\f071";
+    font-family: Fontawesome;
+    margin-right: 5px;
+    font-size: $font-small-xx;
+    position: absolute;
+    bottom: 0;
+    color: $brand-danger;
+  }
+}
