@@ -3,7 +3,6 @@ env:
   browser: true
 extends: [angular, ./node_modules/eslint/conf/eslint-recommended.js]
 globals: 
-  angular: true,
-  firebase: true
+  angular: true
 rules:
   angular/no-service-method: 0

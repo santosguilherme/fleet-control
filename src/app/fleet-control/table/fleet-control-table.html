@@ -16,10 +16,13 @@
   </thead>
 
   <tbody>
-  <tr ng-repeat="vehicle in $ctrl.vehicles">
+  <tr ng-repeat="vehicle in $ctrl.vehicles"
+      ng-class="{'active': vehicle.selected}">
     <td>
       <!-- TODO -->
-      <input type="checkbox" class="cursor-pointer">
+      <input type="checkbox"
+             class="cursor-pointer"
+             ng-model="vehicle.selected"/>
     </td>
     <!-- TODO - tirar hífem da placa -->
     <td ng-bind="vehicle.placa"></td>
@@ -42,6 +45,7 @@
   </tbody>
 </table>
 
-<div align="center" ng-show="!$ctrl.vehicles.length">
-  Nenhum carro encontrado
+<div align="center"
+     ng-show="!$ctrl.vehicles.length"
+     ng-bind="::'MESSAGES.NOT_FOUND_VEHICLES'">
 </div>

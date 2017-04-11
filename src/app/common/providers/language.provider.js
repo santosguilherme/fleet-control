@@ -31,7 +31,11 @@
 
         'VEHICLE_REGISTER': 'Cadastro de Carro'
       },
-      'MESSAGES': {}
+      'MESSAGES': {
+        'NOT_FOUND_VEHICLES': 'Nenhum carro encontrado',
+
+        'VEHICLE_SAVED_SUCCESS': 'Carro salvo com sucesso!'
+      }
     };
 
     vm.getLabels = function () {

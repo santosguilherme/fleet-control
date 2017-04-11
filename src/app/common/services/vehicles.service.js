@@ -4,7 +4,7 @@
   angular.module('fleetControl').service('vehiclesService', vehiclesService);
 
   /*@ngInject*/
-  function vehiclesService($q, uuid, localStorageService, orderByFilter, paginatorFactory) {
+  function vehiclesService($q, uuid, localStorageService, $filter, paginatorFactory) {
     var vm = this;
     var KEY = 'vehicles';
 
@@ -30,13 +30,25 @@
       return deferred.promise;
     };
 
-    vm.delete = function (filter) {
+    vm.delete = function (vehicleId) {
       var deferred = $q.defer();
 
-      deferred.resolve({});
+      if (!vehicleId) {
+        deferred.reject();
+      }
+
+      deferred.resolve(deleteVehicleById(vehicleId));
 
       return deferred.promise;
     };
+
+    function deleteVehicleById(vehicleId) {
+      var vehiclesToSave = queryAll().filter(function (vehicle) {
+        return vehicle.id !== vehicleId;
+      });
+
+      return saveArrayVehicles(vehiclesToSave);
+    }
 
     function saveVehicle(vehicle) {
       var vehicleToSave = angular.merge({}, vehicle);
@@ -55,26 +67,25 @@
       return vehiclesSaved;
     }
 
-    function queryAll() {
-      return localStorageService.get(KEY) || [];
-    }
-
     function queryResponseObject(filter) {
       var queryFilter = filter || paginatorFactory.create();
-
-      var ordenedList = orderByFilter(queryAll(), 'placa');
-
+      var vehicles = $filter('filter')(queryAll(), queryFilter.text);
+      var vehiclesTotalLength = vehicles.length;
       var startAt = (queryFilter.currentPage - 1) * queryFilter.size;
       var endAt = startAt + queryFilter.size;
 
       return {
-        totalElements: ordenedList.length,
-        content: ordenedList.slice(startAt, endAt)
+        totalElements: vehiclesTotalLength,
+        content: $filter('orderBy')(vehicles, 'placa').slice(startAt, endAt)
       };
     }
 
     function saveArrayVehicles(array) {
-      localStorageService.set(KEY, array);
+      return localStorageService.set(KEY, array);
+    }
+
+    function queryAll() {
+      return localStorageService.get(KEY) || [];
     }
   }
 })();

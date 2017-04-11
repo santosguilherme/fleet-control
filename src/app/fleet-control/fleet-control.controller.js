@@ -4,7 +4,7 @@
   angular.module('fleetControl').controller('FleetControlController', FleetControlController);
 
   /*@ngInject*/
-  function FleetControlController(vehiclesService, paginatorFactory) {
+  function FleetControlController(vehiclesService, paginatorFactory, growl, $translate) {
     var vm = this;
 
     constructor();
@@ -23,18 +23,20 @@
     }
 
     vm.addVehicle = function (vehicle) {
-      vehiclesService.save(vehicle).then(queryVehicles);
+      vehiclesService.save(vehicle).then(function () {
+        growl.success($translate.instant('MESSAGES.VEHICLE_SAVED_SUCCESS'));
+        queryVehicles();
+      });
     };
 
     vm.filterVehicles = function (text) {
       vm.filter.text = text;
+      vm.filter.currentPage = 1;
 
-      // TODO
       queryVehicles();
     };
 
     vm.onPageChange = function () {
-      // TODO
       queryVehicles();
     };
   }
