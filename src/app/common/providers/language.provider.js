@@ -30,6 +30,7 @@
 
         'PAGINATION_NEXT': '>>',
         'PAGINATION_PREVIOUS': '<<',
+        'PHOTO': 'Foto',
         'PLATE': 'Placa',
         'PRICE': 'Valor',
 

@@ -1,52 +1,53 @@
 <table class="table vehicle-table">
   <thead>
-  <tr>
-    <th>
-      <input type="checkbox"
-             class="cursor-pointer"
-             ng-model="$ctrl.allSelected"
-             ng-change="$ctrl.handleToggleSelectAll()"/>
-    </th>
-    <!-- TODO translate -->
-    <th>Placa</th>
-    <th>Modelo</th>
-    <th>Marca</th>
-    <th>Foto</th>
-    <th>Combustível</th>
-    <th>Valor</th>
-  </tr>
+    <tr>
+      <th>
+        <input type="checkbox"
+               class="cursor-pointer"
+               ng-model="$ctrl.allSelected"
+               ng-change="$ctrl.handleToggleSelectAll()"/>
+      </th>
+      <th ng-bind="::'LABELS.PLATE' | translate"></th>
+      <th ng-bind="::'LABELS.MODEL' | translate"></th>
+      <th ng-bind="::'LABELS.BRAND' | translate"></th>
+      <th ng-bind="::'LABELS.PHOTO' | translate"></th>
+      <th ng-bind="::'LABELS.FUEL' | translate"></th>
+      <th ng-bind="::'LABELS.PRICE' | translate"></th>
+    </tr>
   </thead>
 
   <tbody>
-  <tr ng-repeat="vehicle in $ctrl.vehicles"
-      ng-class="{'active': vehicle.selected}">
-    <td>
-      <input type="checkbox"
-             class="cursor-pointer"
-             ng-model="vehicle.selected"
-             ng-change="$ctrl.handleToggleSelectRow()"/>
-    </td>
-    <td ng-bind="vehicle.placa"></td>
-    <td ng-bind="vehicle.modelo"></td>
-    <td ng-bind="vehicle.marca"></td>
-    <td>
-      <a class="btn-link"
-         ng-if="vehicle.imagem"
-         ng-bind="::'LABELS.IMAGE' | translate"
-         ng-click="$ctrl.openNewTab(vehicle.imagem)">
-      </a>
+    <tr ng-repeat="vehicle in $ctrl.vehicles"
+        ng-class="{'active': vehicle.selected}">
+      <td>
+        <input type="checkbox"
+               class="cursor-pointer"
+               ng-model="vehicle.selected"
+               ng-change="$ctrl.handleToggleSelectRow()"/>
+      </td>
+      <td ng-bind="vehicle.placa"></td>
+      <td ng-bind="vehicle.modelo"></td>
+      <td ng-bind="vehicle.marca"></td>
+      <td>
+        <a class="btn-link"
+           ng-if="vehicle.imagem"
+           ng-bind="::'LABELS.IMAGE' | translate"
+           ng-click="$ctrl.openNewTab(vehicle.imagem)">
+        </a>
 
-      <span ng-if="!vehicle.imagem"
-            ng-bind="::'LABELS.NO_IMAGE' | translate">
-      </span>
-    </td>
-    <td ng-bind="vehicle.combustivel | defaultValueFilter"></td>
-    <td ng-bind="vehicle.valor | currency:''  | defaultValueFilter"></td>
-  </tr>
+        <span ng-if="!vehicle.imagem"
+              ng-bind="::'LABELS.NO_IMAGE' | translate">
+        </span>
+      </td>
+      <td ng-bind="vehicle.combustivel | defaultValueFilter"></td>
+      <td ng-bind="vehicle.valor | currency:''  | defaultValueFilter"></td>
+    </tr>
+
+    <tr ng-show="!$ctrl.vehicles.length">
+      <td colspan="7"
+          align="center"
+          ng-bind="::'MESSAGES.NOT_FOUND_VEHICLES' | translate">
+      </td>
+    </tr>
   </tbody>
 </table>
-
-<div align="center"
-     ng-show="!$ctrl.vehicles.length"
-     ng-bind="::'MESSAGES.NOT_FOUND_VEHICLES' | translate">
-</div>
