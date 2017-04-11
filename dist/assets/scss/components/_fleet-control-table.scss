@@ -1,0 +1,31 @@
+.vehicle-table {
+  &.table {
+    color: #3C5D7D;
+    border: 1px solid #C9D3DD;
+    margin-bottom: 15px;
+
+    thead > tr > th {
+      background-color: #F8FAFC;
+      border-bottom: 0;
+    }
+
+    tbody > tr > td {
+      background-color: #FFFFFF;
+      padding: 15px 8px;
+
+      .btn-link {
+        cursor: pointer;
+      }
+    }
+
+    tr {
+      th, td {
+        border-color: #C9D3DD;
+      }
+
+      &.active > td {
+        @include active;
+      }
+    }
+  }
+}
