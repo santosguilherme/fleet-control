@@ -38,6 +38,32 @@
         "dist/fonts/glyphicons-halflings-regular.woff2",
         "dist/js/bootstrap.min.js"
       ]
+    },
+    "components-font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/FontAwesome.otf",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2"
+      ]
+    },
+    "roboto-fontface": {
+      "main": [
+        "css/roboto/roboto-fontface.css",
+        "fonts/Roboto/Roboto-Bold.eot",
+        "fonts/Roboto/Roboto-Bold.svg",
+        "fonts/Roboto/Roboto-Bold.ttf",
+        "fonts/Roboto/Roboto-Bold.woff",
+        "fonts/Roboto/Roboto-Bold.woff2",
+        "fonts/Roboto/Roboto-Regular.svg",
+        "fonts/Roboto/Roboto-Regular.ttf",
+        "fonts/Roboto/Roboto-Regular.eot",
+        "fonts/Roboto/Roboto-Regular.woff",
+        "fonts/Roboto/Roboto-Regular.woff2"
+      ]
     }
   },
   "resolutions": {
