@@ -36,8 +36,12 @@
             ng-bind="::'LABELS.NO_IMAGE' | translate">
       </span>
     </td>
-    <td ng-bind="vehicle.combustivel"></td>
-    <td ng-bind="vehicle.valor | currency:''"></td>
+    <td ng-bind="vehicle.combustivel | defaultValueFilter"></td>
+    <td ng-bind="vehicle.valor | currency:''  | defaultValueFilter"></td>
   </tr>
   </tbody>
 </table>
+
+<div align="center" ng-show="!$ctrl.vehicles.length">
+  Nenhum carro encontrado
+</div>

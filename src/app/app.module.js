@@ -8,10 +8,11 @@
     'ngSanitize',
     'ui.bootstrap',
     'angular-growl',
-    'blockUI',
     'pascalprecht.translate',
     'ui.mask',
-    'ui.utils.masks'
+    'ui.utils.masks',
+    'LocalStorageModule',
+    'angular-uuid'
   ]);
 })();
 

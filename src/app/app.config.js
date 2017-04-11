@@ -4,20 +4,16 @@
   angular.module('fleetControl').config(configuration);
 
   /*@ngInject*/
-  function configuration($httpProvider, blockUIConfig, growlProvider, $translateProvider, languageProvider, $compileProvider) {
+  function configuration($httpProvider, $qProvider, growlProvider, $translateProvider, languageProvider, $compileProvider, localStorageServiceProvider) {
     $httpProvider.interceptors.push('requestExceptionInterceptor');
-    $compileProvider.preAssignBindingsEnabled(true);
 
-    configureBlockUI(blockUIConfig);
+    $compileProvider.preAssignBindingsEnabled(true);
+    $qProvider.errorOnUnhandledRejections(false);
+
+    localStorageServiceProvider.setPrefix('fleetControl');
+
     configureGrowl(growlProvider);
     configureTranslate($translateProvider, languageProvider);
-  }
-
-  function configureBlockUI(blockUIConfig) {
-    blockUIConfig.templateUrl = 'app/common/components/block-ui/block-ui-overlay.html';
-    blockUIConfig.delay = 300;
-
-    blockUIConfig.blockBrowserNavigation = false;
   }
 
   function configureGrowl(growlProvider) {
