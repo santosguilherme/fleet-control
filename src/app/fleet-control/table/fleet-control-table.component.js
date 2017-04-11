@@ -6,7 +6,7 @@
     controller: 'FleetControlTableController',
     bindings: {
       vehicles: '=',
-      onSelectRow: '&'
+      onSelect: '&'
     }
   });
 })();

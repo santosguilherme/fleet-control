@@ -7,14 +7,19 @@
     <div class="row">
       <div class="col-xs-12">
         <fleet-control-actions on-filter="$ctrl.filterVehicles"
-                               after-create-vehicle="$ctrl.addVehicle">
+                               create-vehicle="$ctrl.addVehicle"
+                               edit-vehicle="$ctrl.updateVehicle"
+                               delete-vehicle="$ctrl.removeVehicle"
+                               show-edit-button="$ctrl.showEditButton"
+                               show-delete-button="$ctrl.showDeleteButton">
         </fleet-control-actions>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12">
-        <fleet-control-table vehicles="$ctrl.vehicles">
+        <fleet-control-table vehicles="$ctrl.vehicles"
+                             on-select="$ctrl.onSelectVehicles">
         </fleet-control-table>
       </div>
     </div>

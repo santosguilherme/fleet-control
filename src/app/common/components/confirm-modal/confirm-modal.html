@@ -3,7 +3,7 @@
           ng-click="vm.cancel()">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h4 class="modal-title" ng-bind="::'ATTENTION' | translate"></h4>
+  <h4 class="modal-title" ng-bind="::'LABELS.ATTENTION' | translate"></h4>
 </div>
 
 <div class="modal-body">
@@ -12,9 +12,9 @@
 
 <div class="modal-footer">
   <button type="submit" class="btn btn-default" ng-click="vm.cancel()" solar-bpm-focus>
-    <span ng-bind="::'CANCEL' | translate"></span>
+    <span ng-bind="::'LABELS.CANCEL' | translate"></span>
   </button>
   <button type="submit" class="btn btn-warning" ng-click="vm.confirm()">
-    <span ng-bind="::'CONFIRM' | translate"></span>
+    <span ng-bind="::'LABELS.CONFIRM' | translate"></span>
   </button>
 </div>

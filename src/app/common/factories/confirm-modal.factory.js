@@ -6,7 +6,7 @@
   /*@ngInject*/
   function confirmModalFactory($uibModal) {
     return {
-      open: function (text, callback, appendTo, backdrop) {
+      open: function (text) {
         var modalConfig = {
           animation: true,
           size: 'sm',
@@ -18,12 +18,8 @@
             data: {text: text}
           }
         };
-        appendTo && appendTo.length && (modalConfig.appendTo = appendTo);
-        angular.isDefined(backdrop) && (modalConfig.backdrop = backdrop);
 
-        var modalInstance = $uibModal.open(modalConfig);
-
-        modalInstance.result.then(callback);
+        return $uibModal.open(modalConfig);
       }
     };
   }

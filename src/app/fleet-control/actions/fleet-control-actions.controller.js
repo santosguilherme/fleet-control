@@ -4,7 +4,7 @@
   angular.module('fleetControl').controller('FleetControlActionsController', FleetControlActionsController);
 
   /*@ngInject*/
-  function FleetControlActionsController(fleetControlModalFactory) {
+  function FleetControlActionsController() {
     var vm = this;
 
     constructor();
@@ -14,8 +14,15 @@
     }
 
     vm.handleClickNewVehicle = function () {
-      fleetControlModalFactory.open()
-        .result.then(vm.afterCreateVehicle());
+      vm.createVehicle()();
+    };
+
+    vm.handleClickEditVehicle = function () {
+      vm.editVehicle()();
+    };
+
+    vm.handleClickDeleteVehicle = function () {
+      vm.deleteVehicle()();
     };
 
     vm.onChangeFilterText = function () {

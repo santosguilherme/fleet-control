@@ -139,14 +139,18 @@ body {
 
 .vehicle-table-actions {
   margin: 20px 0; }
-  .vehicle-table-actions .btn-primary {
-    background-color: #4ABA58;
-    border-color: #4ABA58;
-    padding: 8px 25px;
+  .vehicle-table-actions .actions-buttons {
     float: left; }
-    .vehicle-table-actions .btn-primary:hover, .vehicle-table-actions .btn-primary:focus, .vehicle-table-actions .btn-primary.focus, .vehicle-table-actions .btn-primary:active:hover, .vehicle-table-actions .btn-primary.active:hover, .vehicle-table-actions .btn-primary:active:focus, .vehicle-table-actions .btn-primary.active:focus, .vehicle-table-actions .btn-primary:active.focus, .vehicle-table-actions .btn-primary.active.focus {
-      background-color: #3a9745;
-      border-color: #33853d; }
+    .vehicle-table-actions .actions-buttons .btn {
+      padding: 8px 25px; }
+      .vehicle-table-actions .actions-buttons .btn + .btn {
+        margin-left: 15px; }
+    .vehicle-table-actions .actions-buttons .btn-primary {
+      background-color: #4ABA58;
+      border-color: #4ABA58; }
+      .vehicle-table-actions .actions-buttons .btn-primary:hover, .vehicle-table-actions .actions-buttons .btn-primary:focus, .vehicle-table-actions .actions-buttons .btn-primary.focus, .vehicle-table-actions .actions-buttons .btn-primary:active:hover, .vehicle-table-actions .actions-buttons .btn-primary.active:hover, .vehicle-table-actions .actions-buttons .btn-primary:active:focus, .vehicle-table-actions .actions-buttons .btn-primary.active:focus, .vehicle-table-actions .actions-buttons .btn-primary:active.focus, .vehicle-table-actions .actions-buttons .btn-primary.active.focus {
+        background-color: #3a9745;
+        border-color: #33853d; }
   .vehicle-table-actions .form-group {
     margin-bottom: 0;
     max-width: 250px;

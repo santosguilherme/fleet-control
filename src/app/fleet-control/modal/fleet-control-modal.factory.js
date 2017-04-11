@@ -6,7 +6,7 @@
   /*@ngInject*/
   function fleetControlModalFactory($uibModal) {
     return {
-      open: function (vehicle, callback) {
+      open: function (vehicle) {
         var modalConfig = {
           animation: true,
           size: 'md',
@@ -14,7 +14,7 @@
           component: 'fleetControlModal',
           resolve: {
             vehicle: function () {
-              return vehicle || {};
+              return angular.copy(vehicle || {});
             }
           }
         };

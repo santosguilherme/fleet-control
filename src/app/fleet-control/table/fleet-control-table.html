@@ -2,8 +2,10 @@
   <thead>
   <tr>
     <th>
-      <!-- TODO -->
-      <input type="checkbox" class="cursor-pointer"/>
+      <input type="checkbox"
+             class="cursor-pointer"
+             ng-model="$ctrl.allSelected"
+             ng-change="$ctrl.handleToggleSelectAll()"/>
     </th>
     <!-- TODO translate -->
     <th>Placa</th>
@@ -19,12 +21,11 @@
   <tr ng-repeat="vehicle in $ctrl.vehicles"
       ng-class="{'active': vehicle.selected}">
     <td>
-      <!-- TODO -->
       <input type="checkbox"
              class="cursor-pointer"
-             ng-model="vehicle.selected"/>
+             ng-model="vehicle.selected"
+             ng-change="$ctrl.handleToggleSelectRow()"/>
     </td>
-    <!-- TODO - tirar hífem da placa -->
     <td ng-bind="vehicle.placa"></td>
     <td ng-bind="vehicle.modelo"></td>
     <td ng-bind="vehicle.marca"></td>

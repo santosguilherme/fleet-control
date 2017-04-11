@@ -1,8 +1,22 @@
 <div class="vehicle-table-actions clearfix">
-  <button class="btn btn-primary"
-          ng-bind="::'LABELS.NEW_VEHICLE' | translate"
-          ng-click="$ctrl.handleClickNewVehicle()">
-  </button>
+  <div class="actions-buttons">
+    <button class="btn btn-primary"
+            ng-bind="::'LABELS.NEW_VEHICLE' | translate"
+            ng-click="$ctrl.handleClickNewVehicle()">
+    </button>
+
+    <button class="btn btn-default"
+            ng-bind="::'LABELS.EDIT_VEHICLE' | translate"
+            ng-show="$ctrl.showEditButton"
+            ng-click="$ctrl.handleClickEditVehicle()">
+    </button>
+
+    <button class="btn btn-default"
+            ng-bind="::'LABELS.DELETE_VEHICLE' | translate"
+            ng-show="$ctrl.showDeleteButton"
+            ng-click="$ctrl.handleClickDeleteVehicle()">
+    </button>
+  </div>
 
   <div class="form-group">
     <div class="input-group">

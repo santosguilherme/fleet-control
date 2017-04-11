@@ -8,9 +8,16 @@
     var labels = {
 
       'LABELS': {
+        'ATTENTION': 'Atenção',
+
         'BRAND': 'Marca',
 
         'CANCEL': 'Cancelar',
+        'CONFIRM': 'Confirmar',
+
+        'DELETE_VEHICLE': 'Remover Carro(s)',
+
+        'EDIT_VEHICLE': 'Editar Carro',
 
         'FUEL': 'Combustível',
 
@@ -34,6 +41,8 @@
       'MESSAGES': {
         'NOT_FOUND_VEHICLES': 'Nenhum carro encontrado',
 
+        'VEHICLE_REMOVE_CONFIRM': 'Deseja remover o(s) <strong>{{size}}</strong> carro(s)?',
+        'VEHICLE_REMOVED_SUCCESS': 'Carros removidos com sucesso!',
         'VEHICLE_SAVED_SUCCESS': 'Carro salvo com sucesso!'
       }
     };

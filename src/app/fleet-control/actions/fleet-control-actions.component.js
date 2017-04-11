@@ -6,7 +6,11 @@
     controller: 'FleetControlActionsController',
     bindings: {
       onFilter: '&',
-      afterCreateVehicle: '&'
+      showEditButton: '<',
+      showDeleteButton: '<',
+      createVehicle: '&',
+      editVehicle: '&',
+      deleteVehicle: '&'
     }
   });
 })();
