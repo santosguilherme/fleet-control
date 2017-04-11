@@ -16,6 +16,8 @@
     }
 
     vm.handleClose = function () {
+      vm.vehicle = angular.merge({}, vm.vehicle, {placa: vm.vehicle.placa.toUpperCase()});
+
       vm.modalInstance.close(vm.vehicle);
     };
 

@@ -10,6 +10,10 @@
   function FleetControlController() {
     var vm = this;
 
+    vm.filter = {
+      text: ''
+    };
+
     vm.vehicles = [{
       combustivel: 'Flex',
       imagem: null,
@@ -34,5 +38,15 @@
         placa: 'PAI-4121',
         valor: 20000
       }];
+
+    vm.addVehicle = function (vehicle) {
+      vm.vehicles.push(vehicle);
+    };
+
+    vm.filterVehicles = function (text) {
+      vm.filter.text = text;
+
+      // TODO
+    };
   }
 })();

@@ -6,7 +6,9 @@
   <div class="container vehicles-content">
     <div class="row">
       <div class="col-xs-12">
-        <fleet-control-actions></fleet-control-actions>
+        <fleet-control-actions on-filter="$ctrl.filterVehicles"
+                               after-create-vehicle="$ctrl.addVehicle">
+        </fleet-control-actions>
       </div>
     </div>
 

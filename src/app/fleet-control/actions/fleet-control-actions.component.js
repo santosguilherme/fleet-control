@@ -5,7 +5,7 @@
     templateUrl: 'app/fleet-control/actions/fleet-control-actions.html',
     controller: 'FleetControlActionsController',
     bindings: {
-      filterText: '=',
+      onFilter: '&',
       afterCreateVehicle: '&'
     }
   });

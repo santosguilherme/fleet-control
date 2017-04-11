@@ -18,9 +18,7 @@
             }
           }
         };
-        var modalInstance = $uibModal.open(modalConfig);
-
-        modalInstance.result.then(callback);
+        return $uibModal.open(modalConfig);
       }
     };
   }

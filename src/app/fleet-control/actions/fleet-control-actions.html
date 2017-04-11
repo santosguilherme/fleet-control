@@ -6,7 +6,13 @@
 
   <div class="form-group">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Pesquisar"/>
+      <input type="text"
+             class="form-control"
+             ng-model="$ctrl.filterText"
+             ng-model-options="{ debounce: 300 }"
+             ng-change="$ctrl.onChangeFilterText()"
+             placeholder="Pesquisar"/>
+
       <span class="input-group-addon" id="basic-addon2">
         <i class="fa fa-search"></i>
       </span>
