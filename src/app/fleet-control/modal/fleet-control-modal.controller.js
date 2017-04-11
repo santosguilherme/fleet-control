@@ -9,10 +9,14 @@
 
     constructor();
 
-    function constructor(){
+    function constructor() {
+      vm.regexPlate = /^[A-Za-z]{3}-[0-9]{4}$/;
       vm.fuels = ['Álcool', 'Flex', 'Gasolina'];
       vm.vehicle = angular.copy(vm.resolve.vehicle);
-      vm.regexPlate = /^[A-Za-z]{3}-[0-9]{4}$/;
+
+      vm.vehicle.combustivel = vm.fuels.find(function (fuel) {
+        return vm.vehicle.combustivel === fuel;
+      });
     }
 
     vm.handleClose = function () {
