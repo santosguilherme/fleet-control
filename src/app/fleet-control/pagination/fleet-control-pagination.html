@@ -1,11 +1,14 @@
 <div class="vehicles-table-pagination">
-  <ul uib-pagination class="pagination-sm" boundary-link-numbers="true" rotate="false"
-       items-per-page="vm.viewControl.paginator.size"
-       total-items="vm.viewControl.paginator.totalElements"
-       ng-model="vm.viewControl.paginator.currentPage"
-       max-size="vm.viewControl.paginator.maxSize"
-       ng-change="vm.refreshActors()"
-       next-text="{{::'LABELS.PAGINATION_NEXT' | translate}}"
-       previous-text="{{::'LABELS.PAGINATION_PREVIOUS' | translate}}">
+  <ul class="pagination-sm"
+      uib-pagination
+      boundary-link-numbers="true"
+      rotate="false"
+      items-per-page="$ctrl.paginator.size"
+      total-items="$ctrl.paginator.totalElements"
+      ng-model="$ctrl.paginator.currentPage"
+      max-size="$ctrl.paginator.maxSize"
+      ng-change="$ctrl.handleChangePage()"
+      next-text="{{::'LABELS.PAGINATION_NEXT' | translate}}"
+      previous-text="{{::'LABELS.PAGINATION_PREVIOUS' | translate}}">
   </ul>
 </div>

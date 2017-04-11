@@ -5,7 +5,7 @@
     templateUrl: 'app/fleet-control/pagination/fleet-control-pagination.html',
     controller: 'FleetControlPaginationController',
     bindings: {
-      itens: '=',
+      paginator: '=',
       onPageChange: '&'
     }
   });

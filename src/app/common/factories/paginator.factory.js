@@ -7,7 +7,7 @@
   function paginatorFactory() {
 
     return {
-      getPaginator: function () {
+      create: function () {
         return {
           currentPage: 1,
           page: 0,

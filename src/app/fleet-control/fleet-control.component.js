@@ -7,12 +7,15 @@
     bindings: {}
   });
 
-  function FleetControlController() {
+  function FleetControlController(paginatorFactory) {
     var vm = this;
 
     vm.filter = {
-      text: ''
+      text: '',
+      paginator: paginatorFactory.create()
     };
+
+
 
     vm.vehicles = [{
       combustivel: 'Flex',
@@ -45,8 +48,11 @@
 
     vm.filterVehicles = function (text) {
       vm.filter.text = text;
-
       // TODO
+    };
+
+    vm.onPageChange = function () {
+
     };
   }
 })();
