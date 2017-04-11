@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/*
- *  Mixin para as funções que terão propriedades no fullscreen
- *
- *  $className - Nome da classe que estará no elemento que ficará em fullscreen e receberá o pseudo-seletor
- *
- *  $declarations - Map (key: value) com as propriedades que deverão estar no fullscreen
- */
 html {
   width: 100%;
   height: 100%; }
@@ -17,10 +10,8 @@ body {
   font-size: 14px; }
 
 a {
-  color: #014588;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #013467;
     text-decoration: underline; }
   a:focus {
     outline: none; }
@@ -31,38 +22,8 @@ label {
   color: rgba(0, 0, 0, 0.54);
   margin-bottom: 2px; }
 
-.bg-color-theme {
-  background-color: #014588; }
-
-.font-color-theme {
-  color: #014588; }
-
-.sp-relative {
-  position: relative; }
-
-.font-weight-normal {
-  font-weight: normal; }
-
-.rotate90 {
-  transform: rotate(90deg); }
-
-.rotate90i {
-  transform: rotate(-90deg); }
-
-.rotate180 {
-  transform: rotate(180deg); }
-
-.rotate270 {
-  transform: rotate(270deg); }
-
 .cursor-pointer {
   cursor: pointer; }
-
-.cursor-crosshair {
-  cursor: crosshair; }
-
-.overflow-x-auto {
-  overflow-x: auto; }
 
 /*
  *  http://tobiasahlin.com/spinkit/
@@ -74,7 +35,7 @@ label {
   .solar-bpm-spinkit > div {
     width: 18px;
     height: 18px;
-    background-color: #014588;
+    background-color: #2687E9;
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -174,6 +135,10 @@ body {
       cursor: pointer; }
   .vehicle-table.table tr th, .vehicle-table.table tr td {
     border-color: #C9D3DD; }
+  .vehicle-table.table tr.active > td {
+    background-color: #D8E9FB;
+    border-color: #8BC8F6;
+    color: #395B7B; }
 
 .vehicles-table-pagination {
   text-align: center; }

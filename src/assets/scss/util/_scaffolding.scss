@@ -11,11 +11,9 @@ body {
 }
 
 a {
-  color: $colorTheme;
   text-decoration: none;
 
   &:hover, &:focus {
-    color: darken($colorTheme, 6.5%);
     text-decoration: underline;
   }
 
